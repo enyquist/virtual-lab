@@ -1,0 +1,52 @@
+[tool.ruff]
+line-length = 120
+exclude = [
+    "\\.git",
+    "\\.hg",
+    "\\.mypy_cache",
+    "\\.tox",
+    "\\.venv",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+]
+extend-exclude = ["*.ipynb"]
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 20
+
+[tool.isort]
+profile = "black"
+sections = ["FUTURE" ,"STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+import_heading_stdlib = "standard libraries"
+import_heading_thirdparty = "third party libraries"
+import_heading_firstparty = "virtual-lab libraries"
+dedup_headings = true
+line_length = 120
+
+[tool.mypy]
+python_version = "3.8"
+disallow_untyped_defs = true
+ignore_missing_imports = true
+strict_optional = false
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+omit = ['**/__init__.py']
+
+[tool.coverage.report]
+ignore_errors = false
+show_missing = true
+exclude_lines = [
+    '@abstractmethod',
+    '@abc.abstractmethod',
+    'Protocol'
+]
+fail_under = 90
+
+[build-system]
+requires=["setuptools", "wheel"]

@@ -1,0 +1,43 @@
+# packages listed here are things that you need to do development but
+# are not needed at runtime
+
+# building wheels, etc
+pip~=24.3
+setuptools~=75.6
+wheel~=0.45
+pip-tools~=7.4
+
+# Dev tools
+litellm~=1.54
+vllm~=0.6
+jupyter~=1.1
+plotly~=5.24
+
+# logging
+rich~=13.9
+structlog~=24.4
+better-exceptions~=0.3
+
+# make lint
+ruff~=0.8
+mypy~=1.13
+isort~=5.13
+pre-commit~=4.0
+
+# make test
+pytest~=8.3
+pytest-cov~=6.0
+pytest-mock~=3.14
+
+# Docs
+mkdocstrings[python]~=0.27
+mkdocs-material~=9.5
+mkdocs-literate-nav~=0.6
+mkdocs-section-index~=0.3
+markdown-callouts~=0.4
+markdown-exec~=1.10
+mkdocs-autolinks-plugin~=0.7
+mkdocs-plugin-progress~=1.2
+
+# code
+-r requirements.txt
